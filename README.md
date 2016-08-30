@@ -24,7 +24,7 @@ public class solutuion{
 
 
 |Question:Remove Duplicates from Sorted Array |Unit test:161 cases: |Runtime Beat:54.77%: |Author: xx254|
-‘’‘
+
 public class Solution {
     public int removeDuplicates(int[] nums) {
         if(nums == null || nums.length == 0 )
@@ -40,7 +40,7 @@ public class Solution {
         return c+1;
     }
 }
-’‘’
+
 
 |Question: Contains with most water| unit test:45  | Runtime beat: 78.10%   | Author: Cory  |
 
