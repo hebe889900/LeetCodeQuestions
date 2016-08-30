@@ -93,3 +93,34 @@ public class Solution {
     }
     //可以继续优化的地方很多，to be continued...
 }
+
+|Question: Contains with most water| unit test:45  | Runtime beat: 71.04%   | Author: spyfree
+
+```java
+
+public class Solution {
+    public int maxArea(int[] height) {
+        if(height==null || height.length <= 1)
+            return 0;
+
+        int i=0, j=height.length-1;
+
+        int Smax = Math.min(height[i],height[j])*(j-i);
+        while(i<j){
+            if(height[i]>height[j])
+            {
+                Smax = Math.max(Smax, height[j]*(j-i));
+                j--;
+            }
+            else
+            {
+                Smax = Math.max(Smax, height[i]*(j-i));
+                i++;
+            }
+         }
+        return Smax;
+    }
+}
+
+```
+
