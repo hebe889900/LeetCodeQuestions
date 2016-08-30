@@ -21,6 +21,23 @@ public class solutuion{
       return start + 1;
     }
 }
+|Question:Remove Duplicates from Sorted Array |Unit test:161 cases: |Runtime Beat:54.77%: |Author: xx254|
+
+public class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums == null || nums.length == 0 )
+            return 0;
+        if(nums.length == 1)
+            return 1;
+        int c = 0;
+        for(int i=0; i<nums.length-1; i++){
+            if(nums[i]!=nums[i+1]){
+                nums[++c] = nums[i+1];
+            }
+        }
+        return c+1;
+    }
+}
 
 |Question: Contains with most water| unit test:45  | Runtime beat: 78.10%   | Author: Cory  |
 
@@ -49,4 +66,26 @@ public class solution{
           
         return max;
     }
+}
+|Question: Contains with most water| unit test:45  | Runtime beat: 25.85%   | Author: xx254  |
+public class Solution {
+    public int maxArea(int[] height) {
+        if(height==null || height.length==0 || height.length == 1)
+            return 0;
+        if(height.length==2)
+            return Math.min(height[0],height[1]);
+            
+        int i=0, j=height.length-1;
+
+        int Smax = Math.min(height[i],height[j])*(j-i);
+        while(i<j){
+
+            int a = height[i]>height[j]?j--:i++;
+            int h = Math.min(height[i],height[j]);
+            //把h放到展开放到下式中，就会Time Exceed，为什么呢！？
+            Smax = Math.max(Smax, h*(j-i));
+         }
+        return Smax;
+    }
+    //可以继续优化的地方很多，to be continued...
 }
