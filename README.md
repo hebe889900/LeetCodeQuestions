@@ -10,9 +10,9 @@ We will working on the Leetcode questions! Unit tests are recommended.
 public class solutuion{
 
   public int removeDupulcates(int[] nums ){
-     
+
       int start = 0;
-      
+
       for(int i = 1; i < nums.length;i++){
           if(nums[i] != nums[start]){
             nums[++start] = nums[i];
@@ -41,32 +41,59 @@ public class Solution {
     }
 }
 
+|Question:Remove Duplicates from Sorted Array |Unit test:161 cases: |Runtime Beat:54.77%: |Author: spyfree|
+```java
+public class Solution {
+    public int removeDuplicates(int[] nums) {
+
+        if (nums == null )
+            return 0;
+
+        if (nums.length <= 1)
+            return nums.length;
+
+        int len = nums.length;
+        int i = 1,j = 1;
+        while(i<len && j<len){
+            int d = nums[i-1];
+            while(j<len && nums[j] == d ){
+                j++;
+            }
+            if(j==len) return i;    
+            nums[i] = nums[j];
+            i++;j++;
+        }
+        return i;
+    }
+}
+
+```
 
 |Question: Contains with most water| unit test:45  | Runtime beat: 78.10%   | Author: Cory  |
 
 public class solution{
 
     public int containsWithMostWater(int[] height){
-    
+
         if(height.length <= 1 || height == null) reurn 0;
-        
+
         int max = 0, left = 0, right = height.length - 1, hLeft = height[left], hRight = height[right];
-        
+
         while(left < right){
             max = Math.max(max, (right - left) * Math.min(hLeft, hRight));
-            
+
             if(hLeft < hright){
                 while(left < right && height[left] <= hLeft) left++;
-                
+
                 if(left < right) lLeft = height[left];
             }else{
                 while(left < right && height[right] <= hRight) right--;
-                
+
                 if(left < right) hRight = height[right];
             }
-          
+
           }
-          
+
         return max;
     }
 }
@@ -78,7 +105,7 @@ public class Solution {
             return 0;
         if(height.length==2)
             return Math.min(height[0],height[1]);
-            
+
         int i=0, j=height.length-1;
 
         int Smax = Math.min(height[i],height[j])*(j-i);
@@ -123,4 +150,3 @@ public class Solution {
 }
 
 ```
-
