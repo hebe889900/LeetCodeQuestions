@@ -22,6 +22,7 @@ public class solutuion{
     }
 }
 
+
 |Question:Remove Duplicates from Sorted Array |Unit test:161 cases: |Runtime Beat:54.77%: |Author: xx254|
 
 public class Solution {
@@ -39,6 +40,7 @@ public class Solution {
         return c+1;
     }
 }
+
 
 |Question: Contains with most water| unit test:45  | Runtime beat: 78.10%   | Author: Cory  |
 
@@ -68,6 +70,7 @@ public class solution{
         return max;
     }
 }
+
 |Question: Contains with most water| unit test:45  | Runtime beat: 25.85%   | Author: xx254  |
 public class Solution {
     public int maxArea(int[] height) {
