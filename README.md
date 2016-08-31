@@ -23,6 +23,8 @@ Add a row at Question table with:
 |Question:Remove Duplicates from Sorted Array |Unit test:161 cases: |Runtime Beat:54.77%: |Author: Cory|
 |Question:Remove Duplicates from Sorted Array |Unit test:161 cases: |Runtime Beat:54.77%: |Author: xx254|
 |Question:Remove Duplicates from Sorted Array |Unit test:161 cases: |Runtime Beat:54.77%: |Author: spyfree|
+|Question:Remove Duplicates from Sorted Array	|Unit test:161 cases:	|Runtime Beat:9.20%:	|Author: creekhu
+
 |Question: Contains with most water| unit test:45  | Runtime beat: 78.10%   | Author: Cory  |
 |Question: Contains with most water| unit test:45  | Runtime beat: 25.85%   | Author: xx254  |
 |Question: Contains with most water| unit test:45  | Runtime beat: 71.04%   | Author: spyfree|
