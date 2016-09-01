@@ -31,3 +31,5 @@ Add a row at Question table with:
 |Question: Contains with most water| unit test:False  | Runtime beat: 73.74%   | Author: sunnyxw|
 |Question: Binary Tree Inorder Traversal| unit test:False  | Runtime beat: 4.67%   | Author: spyfree|
 |Question: Same Tree| unit test:False  | Runtime beat: 11.51%   | Author: spyfree|
+|Question: Simplify Path| unit test:False  | Runtime beat: 36.25%   | Author: spyfree|
+|Question: Valid Parentheses| unit test:False  | Runtime beat: 52.87%   | Author: spyfree|
