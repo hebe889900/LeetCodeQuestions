@@ -28,8 +28,9 @@ Add a row at Question table with:
 |Question: Contains with most water| unit test:45  | Runtime beat: 25.85%   | Author: xx254  |
 |Question: Contains with most water| unit test:45  | Runtime beat: 71.04%   | Author: spyfree|
 |Question: Same Tree| unit test:54  | Runtime beat: 11.5%   | Author: creekhu|
-|Question: Contains with most water| unit test:False  | Runtime beat: 73.74%   | Author: sunnyxw|
+|Contains with most water|	False	|	73.74%	|	sunnyxw	|
 |Question: Binary Tree Inorder Traversal| unit test:False  | Runtime beat: 4.67%   | Author: spyfree|
 |Question: Same Tree| unit test:False  | Runtime beat: 11.51%   | Author: spyfree|
 |Question: Simplify Path| unit test:False  | Runtime beat: 36.25%   | Author: spyfree|
 |Question: Valid Parentheses| unit test:False  | Runtime beat: 52.87%   | Author: spyfree|
+|Valid Parentheses|	False	|	False	|	72.46%	|	sunnyxw	|
