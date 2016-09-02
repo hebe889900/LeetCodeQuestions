@@ -34,3 +34,5 @@ Add a row at Question table with:
 |Question: Simplify Path| unit test:False  | Runtime beat: 36.25%   | Author: spyfree|
 |Question: Valid Parentheses| unit test:False  | Runtime beat: 52.87%   | Author: spyfree|
 |Valid Parentheses|	False	|	72.46%	|	sunnyxw	|
+|Question: Symmetric Tree| unit test:False  | Runtime beat: 26.05%   | Author: spyfree|
+|Question: Binary Tree Zigzag Level Order Traversal| unit test:False  | Runtime beat: 12.62%   | Author: spyfree|
