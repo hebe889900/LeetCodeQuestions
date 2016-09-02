@@ -33,4 +33,4 @@ Add a row at Question table with:
 |Question: Same Tree| unit test:False  | Runtime beat: 11.51%   | Author: spyfree|
 |Question: Simplify Path| unit test:False  | Runtime beat: 36.25%   | Author: spyfree|
 |Question: Valid Parentheses| unit test:False  | Runtime beat: 52.87%   | Author: spyfree|
-|Valid Parentheses|	False	|	False	|	72.46%	|	sunnyxw	|
+|Valid Parentheses|	False	|	72.46%	|	sunnyxw	|
