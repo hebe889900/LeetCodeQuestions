@@ -14,7 +14,7 @@ public class Solution {
             head.next = prev;
             prev = head;
             head = tmp;
-        }
+        }//test
         return prev;
     }
 }
