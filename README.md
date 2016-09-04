@@ -36,3 +36,5 @@ Add a row at Question table with:
 |Valid Parentheses|	False	|	72.46%	|	sunnyxw	|
 |Question: Symmetric Tree| unit test:False  | Runtime beat: 26.05%   | Author: spyfree|
 |Question: Binary Tree Zigzag Level Order Traversal| unit test:False  | Runtime beat: 12.62%   | Author: spyfree|
+|Question: Validate Binary Search Tree| unit test | Runtime beat: 10.15%  | Author: xx254|
+|Question: Maximum Depth of Binary Tree| unit test  | Runtime beat: 2.97%  | Author: xx254|
