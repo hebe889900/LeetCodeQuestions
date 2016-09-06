@@ -42,3 +42,5 @@ Add a row at Question table with:
 |Question: Maximum Depth of Binary Tree| unit test | Runtime beat: 10.15%  | Author: spyfree|
 |Question: Is Subsequence| unit test | Runtime beat: NA  | Author: spyfree|
 |Question: Candy| unit test | Runtime beat: 9.10%  | Author: spyfree|
+|Question: Is Subsequence| unit test | Runtime beat: NA  | Author: Cory Jia
+|Question: Candy| unit test | Runtime beat: 28.31%  | Author: Cory Jia
