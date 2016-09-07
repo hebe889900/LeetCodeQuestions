@@ -7,8 +7,8 @@ public class QuickSort {
 	/**
 	 * 
 	 * Quick Sort
-	 * Best case: O(n logn)
-	 * Average: O(n logn)
+	 * Best case: 𝛺(n logn)
+	 * Average: 𝛳(n logn)
 	 * Wrost case: O(n*n)
 	 * 
 	 * Space complexity: O(logn) 
