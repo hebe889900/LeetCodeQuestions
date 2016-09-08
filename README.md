@@ -46,3 +46,5 @@ Add a row at Question table with:
 |Question: Candy| unit test | Runtime beat: 28.31%  | Author: Cory Jia
 |Question: Climbing Stairs| unit test 45 | Runtime beat: 11.09%  | Author: Cory Jia
 |Question: Minimum Path Sum| unit test 61 | Runtime beat: 51.74%  | Author: Cory Jia
+|Question: Climbing Stairs| unit test 45| Runtime beat: NA  | Author: spyfree|
+|Question: Minimum Path Sum| unit test 61| Runtime beat: NA  | Author: spyfree|
