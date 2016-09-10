@@ -44,12 +44,9 @@ Add a row at Question table with:
 |Question: Candy| unit test | Runtime beat: 9.10%  | Author: spyfree|
 |Question: Is Subsequence| unit test | Runtime beat: NA  | Author: Cory Jia
 |Question: Candy| unit test | Runtime beat: 28.31%  | Author: Cory Jia
-<<<<<<< HEAD
 |Question: TwoSum| unit test | Runtime: 33ms | Author: tonyH
 |Question: Candy| unit test | Runtime: 7ms | Author: tonyH
-=======
 |Question: Climbing Stairs| unit test 45 | Runtime beat: 11.09%  | Author: Cory Jia
 |Question: Minimum Path Sum| unit test 61 | Runtime beat: 51.74%  | Author: Cory Jia
 |Question: Climbing Stairs| unit test 45| Runtime beat: NA  | Author: spyfree|
 |Question: Minimum Path Sum| unit test 61| Runtime beat: NA  | Author: spyfree|
->>>>>>> 71c5986999228b387cd313fc8c1d67f785fc4857
