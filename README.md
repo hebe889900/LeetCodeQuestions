@@ -50,3 +50,4 @@ Add a row at Question table with:
 |Question: Minimum Path Sum| unit test 61 | Runtime beat: 51.74%  | Author: Cory Jia
 |Question: Climbing Stairs| unit test 45| Runtime beat: NA  | Author: spyfree|
 |Question: Minimum Path Sum| unit test 61| Runtime beat: NA  | Author: spyfree|
+|Question: Longest Substring| unit test | Runtime: 230ms | Author: tonyH|
