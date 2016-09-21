@@ -1,0 +1,60 @@
+//AC.
+/*java string sort: 
+ *1. char[] str.toCharArray() 
+ *2.Arrays.sort(chars)
+ *3.new String(chars);
+ *4.equals
+/ 
+
+
+public class Solution {
+    /**
+     * @param s: The first string
+     * @param b: The second string
+     * @return true or false
+     */
+    public boolean anagram(String s, String t) {
+        char[] s1 = s.toCharArray();
+        char[] t1 = t.toCharArray();
+        Arrays.sort(s1);
+        Arrays.sort(t1);
+        String s2 = new String(s1);
+        String t2 = new String(t1);
+        if(s2.equals(t2))
+            return true;
+        else 
+            return false;
+    }
+};
+
+
+//未通过（通过34%），如何判断两个HashMap相等？？？？？？
+public class Solution {
+    /**
+     * @param s: The first string
+     * @param b: The second string
+     * @return true or false
+     */
+    public boolean anagram(String s, String t) {
+        HashMap<Character, Integer> h1 = new HashMap<>();
+        HashMap<Character, Integer> h2 = new HashMap<>();
+        for(int i = 0; i < s.length(); i++){
+            if(h1.containsKey(s.charAt(i)))
+                h1.put(s.charAt(i), h1.get(s.charAt(i) + 1));
+            else
+                h1.put(s.charAt(i), 1);
+        }
+        for(int i = 0; i < s.length(); i++){
+            if(h2.containsKey(s.charAt(i)))
+                h2.put(t.charAt(i), h2.get(t.charAt(i) + 1));
+            else
+                h2.put(t.charAt(i), 1);
+            
+        }
+        if(h1.entrySet().equals(h2.entrySet())){
+            return true;
+        }
+        else
+            return false;
+    }
+};
