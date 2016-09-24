@@ -1,0 +1,23 @@
+public class Solution {
+    /**
+     * @param strs: A list of strings
+     * @return: The longest common prefix
+     */
+    public String longestCommonPrefix(String[] strs) {
+        String res = "";
+        if(strs == null || strs.length == 0)
+            return res;
+        for(int i = 0; i < strs[0].length(); i++){
+            int pos = res.length();
+            char c = strs[0].charAt(pos);
+            for(int j = 1; j < strs.length; j++){
+                //要先判断长度
+                if(pos == strs[j].length() || strs[j].charAt(pos) != c ){
+                    return res;
+                }
+            }
+            res += c;
+        }
+        return res;
+    }
+}
