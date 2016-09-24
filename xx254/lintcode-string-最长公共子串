@@ -1,0 +1,28 @@
+
+public class Solution {
+    /**
+     * @param A, B: Two string.
+     * @return: the length of the longest common substring.
+     */
+    public int longestCommonSubstring(String A, String B) {
+        if(A == null || B == null || A.length() == 0 || B.length() == 0)
+            return 0;
+        int alen = A.length();
+        int blen = B.length();
+        int longest = -1;
+        int[][] count = new int[alen + 1][blen + 1];
+        for(int i = 1; i <= alen; i++){
+            for(int j = 1; j <= blen; j++){
+                if(A.charAt(i-1) == B.charAt(j-1)){
+                    count[i][j] = count[i-1][j-1] + 1;
+                    longest = Math.max(longest, count[i][j]);
+                }
+                else{
+                    count[i][j] = 0;
+                }
+                
+            }
+        }
+        return longest;
+    }
+}
