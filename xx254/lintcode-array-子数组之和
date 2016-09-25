@@ -1,0 +1,31 @@
+public class Solution {
+    /**
+     * @param nums: A list of integers
+     * @return: A list of integers includes the index of the first number 
+     *          and the index of the last number
+     */
+    public ArrayList<Integer> subarraySum(int[] nums) {
+        int[] n = new int[nums.length];
+        n[0] = nums[0];     //initialization !!
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for(int i = 1; i < nums.length; i++){
+            n[i] = n[i-1] + nums[i];
+        }
+        HashMap<Integer, Integer> h = new HashMap<>();
+        h.put(0, -1);       // very important 
+        // one more for-loop is not more time-complexed.
+        for(int j = 0; j < n.length; j++){
+            if(!h.containsKey(n[j])){
+                h.put(n[j], j);     // differ put(.. , 1)
+            }
+            else{
+                int start = h.get(n[j]) + 1;
+                int end = j;
+                list.add(start);
+                list.add(end);
+                return list;
+            }
+        }
+        return list;
+    }
+}
