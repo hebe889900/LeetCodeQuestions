@@ -1,0 +1,38 @@
+public class Solution {
+    /**
+     * @param numbers : Give an array numbers of n integer
+     * @return : Find all unique triplets in the array which gives the sum of zero.
+     */
+    public ArrayList<ArrayList<Integer>> threeSum(int[] numbers) {
+        ArrayList<ArrayList<Integer>> lists = new ArrayList<ArrayList<Integer>>();
+        HashSet<ArrayList<Integer>> set = new HashSet<>();
+        
+        if(numbers == null || numbers.length < 3)
+            return lists;
+            
+        for(int i = 0; i < numbers.length - 2; i++){
+            int target = 0 - numbers[i];
+            // i 要到倒数第三个数，但是 j 要到倒数第一个数
+            //location of init matters
+            HashMap<Integer, Integer> h = new HashMap<>();
+            for(int j = i + 1; j < numbers.length; j++){
+                
+                if(!h.containsKey(numbers[j]))
+                    h.put(target - numbers[j], j);
+                else{
+                    ArrayList<Integer> list = new ArrayList<Integer>();
+                    list.add(numbers[i]);
+                    list.add(numbers[j]);
+                    list.add(target - numbers[j]);
+                    //去重问题
+                    //"sort a list": Collections.sort(list);
+                    Collections.sort(list);
+                    set.add(list);
+                }
+            }
+        }
+        //"set to list": lists.addAll(set)
+        lists.addAll(set);
+        return lists;
+    }
+}
