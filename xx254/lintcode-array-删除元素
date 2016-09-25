@@ -1,0 +1,23 @@
+// some method have strict bound conditions to consider
+
+public class Solution {
+    /** 
+     *@param A: A list of integers
+     *@param elem: An integer
+     *@return: The new length after remove
+     */
+    public int removeElement(int[] A, int elem) {
+        int p = 0;
+        int count = A.length;
+        for(int i = 0; i < A.length; i++){
+            if(A[i] != elem){
+                A[p] = A[i];
+                p++;
+            }
+            else{
+                count--;
+            }
+        }
+        return count;
+    }
+}
