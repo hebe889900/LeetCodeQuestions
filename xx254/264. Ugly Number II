@@ -1,0 +1,22 @@
+public class Solution {
+    public int nthUglyNumber(int n) {
+ 			 if(n <= 0)  return 0;
+        if(n == 1)  return 1;
+        int[] nums = new int[n];
+        int pos = 1;
+        int p2 = 0, p3 = 0, p5 = 0;
+        nums[0] = 1;
+        
+        while(pos < n){
+            
+            nums[pos] = Math.min(2*nums[p2], Math.min(3*nums[p3], 5*nums[p5]));
+            if (nums[pos] == 2*nums[p2]) p2++;
+            if (nums[pos] == 3*nums[p3]) p3++;      //important!! : not "else if"
+            if (nums[pos] == 5*nums[p5]) p5++;
+            
+            pos++;
+        }
+        
+        return nums[pos -1];
+    }
+}
