@@ -27,6 +27,7 @@ public class Solution {
 }
 
 // 2. Linear-time Solution
+//*** https://segmentfault.com/a/1190000003903509 ***
 //reverseOrder() is not ReverseOrder()
 //PriorityQueue  remove, offer, peek
 public class Solution {
