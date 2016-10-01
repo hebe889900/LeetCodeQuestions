@@ -1,0 +1,22 @@
+public class Solution {
+    public int largestRectangleArea(int[] heights) {
+        
+        if(heights == null || heights.length == 0)
+            return 0;
+            
+        Stack<Integer> st = new Stack<>();
+        int area = 0;
+        
+        for(int i = 0; i <= heights.length; i++){
+            int cur = (i < heights.length) ? heights[i] : -1;   // 这种结构为了考虑特殊情况no need to add -1 into array heights[]                               // <==> stretching the array
+            while(!st.empty() && cur < heights[st.peek()]){     //not "cur < height[i-1]"
+                int h = heights[st.pop()];
+                int w = (st.isEmpty()) ? i : i - st.peek() - 1; // 这种结构为了考虑特殊情况
+                area = Math.max(area, h*w);
+            }
+            
+            st.push(i);
+        }
+        return area;
+    }
+}
