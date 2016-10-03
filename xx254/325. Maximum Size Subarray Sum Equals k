@@ -1,0 +1,22 @@
+public class Solution {
+    public int maxSubArrayLen(int[] nums, int k) {
+        if(nums == null || nums.length == 0)
+            return 0;
+            
+        HashMap<Integer, Integer> h = new HashMap<>();
+        int sum = 0;
+        int maxlen = Integer.MIN_VALUE;
+        
+        for(int i = 0; i < nums.length; i++){
+            sum += nums[i];
+
+            if(!h.containsKey(sum))
+                h.put(sum, i);
+            if(sum == k)
+                maxlen = Math.max(maxlen, i + 1);
+            if(h.containsKey(sum - k))
+                maxlen = Math.max(maxlen, i - h.get(sum - k)) ;
+    }
+        return (maxlen == Integer.MIN_VALUE) ? 0 : maxlen; // !! Consider the case of "not found"
+    }
+}
