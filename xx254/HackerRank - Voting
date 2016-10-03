@@ -1,0 +1,44 @@
+//public static String voting();
+//public static void main(String[] args)
+//Scanner sc = new Scanner(System.in)
+//sc.next() ; sc.nextInt()
+//System.out.println()
+//Map.Entry<String, Integer> entry : h.entrySet()
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+       
+    public static String voting(int a, String[] names){
+        HashMap<String, Integer> h = new HashMap<>();
+        for(int i = 0; i < a; i++){
+            if(h.containsKey(names[i])){
+                h.put(names[i], h.get(names[i]) + 1);
+            }
+            else{
+                h.put(names[i], 1);
+            }
+        }
+        for(Map.Entry<String, Integer> entry : h.entrySet()){
+            if(entry.getValue() > a/2)
+               return entry.getKey();
+        } 
+        String empty = "None";
+        return empty;
+    }
+    
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        String[] names = new String[a];
+        for(int i = 0; i < a; i++){
+            names[i] = sc.next();
+        }
+        Solution s = new Solution();
+        String res = s.voting(a, names);
+        System.out.println(res);
+    }
+}
