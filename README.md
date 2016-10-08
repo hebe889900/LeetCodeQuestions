@@ -51,3 +51,4 @@ Add a row at Question table with:
 |Question: Climbing Stairs| unit test 45| Runtime beat: NA  | Author: spyfree|
 |Question: Minimum Path Sum| unit test 61| Runtime beat: NA  | Author: spyfree|
 |Question: Longest Substring| unit test | Runtime: 230ms | Author: tonyH|
+|Question: Rotate Array| unit test | Runtime beat: 12.84% | Author: tonyH|
