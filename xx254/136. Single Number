@@ -1,0 +1,21 @@
+
+public class Solution {
+    public int singleNumber(int[] nums) {
+        if(nums == null || nums.length == 0)
+            return 0;
+        HashMap<Integer, Integer> h = new HashMap<>();
+        for(int i = 0; i < nums.length; i++){
+            if(!h.containsKey(nums[i])){
+                h.put(nums[i], 1);
+            }
+            else{
+                h.put(nums[i], 2);
+            }
+        }
+        for(Map.Entry<Integer, Integer> entry : h.entrySet()){   // important <Integer, Integer>!!
+            if(entry.getValue().intValue() == 1)
+                return entry.getKey();
+        }
+        return 10086;
+    }
+}
