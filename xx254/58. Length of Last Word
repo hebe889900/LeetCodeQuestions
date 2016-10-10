@@ -1,0 +1,26 @@
+// 特殊考虑的case: 空格结尾，只有字母
+
+public class Solution {
+    public int lengthOfLastWord(String s) {
+        
+        if(s == null || s.length() == 0)
+            return 0;
+            
+        int pos = s.length() - 1;
+        int res = 0;
+        
+        while(pos >=0 && s.charAt(pos) == ' '){     //以空格为结尾
+            pos--;
+        }
+            
+        while(pos >= 0 && s.charAt(pos) != ' '){    //空格要用单引号，否则是String
+            res++;
+            pos--;
+        }
+        if(pos >= -1)       //边界是 -1
+            return res;
+        else
+            return 0;
+        
+    }
+}
