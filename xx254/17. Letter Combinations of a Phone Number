@@ -1,0 +1,33 @@
+public class Solution {
+    
+    //positon matters
+    String[] map ={"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    
+    public List<String> letterCombinations(String digits) {
+        
+        List<String> res = new ArrayList<String>();
+        
+        if(digits == null || digits.length() == 0)
+            return res;
+        
+        dfs(0, new StringBuilder(), digits, res);
+        return res;
+    }
+    
+    public void dfs(int pos, StringBuilder sb, String digits, List<String> res){
+        
+        if(pos == digits.length()){
+            res.add(sb.toString());     // StringBuilder 在toString的时候会new出来一个 所以sb不用另外new
+            return;
+        }
+        
+        String str = map[digits.charAt(pos) - '0'];
+        
+        for(int i = 0; i < str.length(); i++){
+            sb.append(str.charAt(i));
+            dfs(pos + 1, sb, digits, res);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+            
+    }
+}
