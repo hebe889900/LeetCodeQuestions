@@ -1,0 +1,52 @@
+//两种做法，第一种是看起来比较简洁，但是有点巧合的做法。第二种是展开所有情况的做法：
+
+public class Solution {
+    public int searchInsert(int[] nums, int target) {
+        if(nums == null || nums.length == 0){
+            return -1;
+        }
+        int left = 0, right = nums.length - 1;
+        int mid = 0;
+        while(left <= right){
+            mid = (left + right)/2;
+            if(nums[mid] == target)
+                return mid;
+            else if(nums[mid] < target)
+                left = mid + 1;
+            else if(nums[mid] > target)
+                right = mid - 1;
+        }
+        return left;
+    }
+}
+-----------------------------------------------------------------------
+public class Solution {
+    public int searchInsert(int[] nums, int target) {
+        if(nums == null || nums.length == 0){
+            return -1;
+        }
+        int left = 0, right = nums.length - 1;
+        int mid = 0;
+        while(left < right){
+            mid = (left + right)/2;
+            if(nums[mid] == target)
+                return mid;
+            else if(nums[mid] < target)
+                left = mid + 1;
+            else if(nums[mid] > target)
+                right = mid - 1;
+        }
+        if(left == right){  // 到达最左边/到达最右边
+            if(target < nums[left])
+                return left;
+            else if(target == nums[left])
+                return left;
+            else if(target > nums[right])
+                return right + 1;
+        }
+        if(left > right)    // 到达最左边
+            return left;
+        return 10086;
+        
+    }
+}
