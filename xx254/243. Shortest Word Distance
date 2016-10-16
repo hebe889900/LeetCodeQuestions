@@ -1,0 +1,26 @@
+public class Solution {
+    public int shortestDistance(String[] words, String word1, String word2) {
+
+        List<Integer> path1 = new ArrayList<>();
+        List<Integer> path2 = new ArrayList<>(); 
+        int res = Integer.MAX_VALUE;
+        
+        for(int i = 0; i < words.length; i++){
+            
+            if(words[i].equals(word1)){
+                path1.add(i);
+            }
+            if(words[i].equals(word2)){
+                path2.add(i);
+            }
+        }
+        
+        for(int i = 0; i < path1.size(); i++){
+            for(int j = 0; j < path2.size(); j++){
+                res = Math.min(res, Math.abs(path1.get(i) - path2.get(j)));   
+            }
+        }
+        
+        return res; 
+    }
+}
