@@ -1,0 +1,27 @@
+public class Solution {
+    public List<String> generatePossibleNextMoves(String s) {
+        List<String> list = new ArrayList<String>();
+        List<String> empty = new ArrayList<String>();
+        
+        if(s == null || s.length() == 0)
+            return list;
+          
+        int pos = 0;
+        int count = 0;
+        
+        //定式思维：-- 是不能变成 ++
+        for(int i = 0; i < s.length() - 1; i++){
+            //String.charAt()只能用来取char不能用来改变char，改变用StringBuilder.setCharAt()
+            StringBuilder str = new StringBuilder(s);  
+            
+            if(str.charAt(i) == str.charAt(i+1) && str.charAt(i) == '+'){
+                str.setCharAt(i, '-');
+                str.setCharAt(i+1, '-');
+                count++;
+                list.add(str.toString());       // StringBuilder.toString();
+            }
+        }
+        
+        return list;
+    }
+}
