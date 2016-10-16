@@ -1,0 +1,30 @@
+public class Solution {
+    public int longestPalindrome(String s) {
+        if(s == null || s.length() == 0)
+            return 0;
+        
+        HashMap<Character, Integer> h = new HashMap<>();
+        boolean b = false;
+        int count = 0;
+        
+        for(int i = 0; i < s.length(); i++){
+            if(!h.containsKey(s.charAt(i))){
+                h.put(s.charAt(i), 1);
+            }
+            else{
+                h.put(s.charAt(i), h.get(s.charAt(i)) + 1);
+            }
+        }
+        for(Map.Entry<Character, Integer> entry: h.entrySet()){
+            if(entry.getValue().intValue() % 2 == 0)
+                count += entry.getValue().intValue();
+            if(entry.getValue().intValue() % 2 == 1){
+                count += entry.getValue().intValue() - 1;         //易错
+                b = true;
+            }
+        }
+        if(b)
+            count++;
+        return count;
+    }
+}
