@@ -1,0 +1,38 @@
+public class Solution {
+    public int shortestWordDistance(String[] words, String word1, String word2) {
+        
+        HashMap<String, List<Integer>> h = new HashMap<>();
+        int count = Integer.MAX_VALUE;
+        
+        for(int i = 0; i < words.length; i++){
+            List<Integer> list = new ArrayList<>();
+            if(! h.containsKey(words[i])){
+                list.add(i);
+                h.put(words[i], list);
+            }
+            else{
+                h.get(words[i]).add(i);                       //！！ 不用put，因为add返回值是boolean。并且list.add()之后也不用put
+            }
+        }
+        if(!word1.equals(word2)){
+            for(int i = 0; i < h.get(word1).size(); i++){
+                for(int j = 0; j < h.get(word2).size(); j++){
+                    count = Math.min(count, Math.abs(h.get(word1).get(i) - h.get(word2).get(j)));
+                }
+            }
+        }
+        else{                                                  
+            int[] tmp = new int[h.get(word1).size()];         //ArrayList to array !!!!
+            int t = 0;
+            List<Integer> list = h.get(word1);
+            for(Integer e : list)
+                tmp[t++] = e.intValue();
+            
+            for(int i = 0; i < h.get(word1).size() - 1; i++){
+                count = Math.min(count, tmp[i+1] - tmp[i]);
+            }
+        }
+        return count;
+        
+    }
+}
