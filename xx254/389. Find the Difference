@@ -2,7 +2,7 @@ public class Solution {
     public char findTheDifference(String s, String t) {
 
         HashMap<Character, Integer> h = new HashMap<>();
-        char c = '\0';      //char init!!! char = '' is wrong
+        char c = '\0';                                          //char init!!! char = '' is wrong
         
         for(int i = 0; i < s.length(); i++){
             if(! h.containsKey(s.charAt(i))){
@@ -24,7 +24,8 @@ public class Solution {
             if(entry.getValue() != 0)
                 c = entry.getKey();
         }
-        return c;           //不需要数count，默认没有输入不符合情况
+        return c;                                                //不需要数count，默认没有输入不符合情况
         
     }
 }
+
