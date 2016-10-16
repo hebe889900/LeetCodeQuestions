@@ -1,0 +1,21 @@
+public class Solution {
+    public int findPeakElement(int[] nums) {
+        int l = 0, r = nums.length - 1;             //不要放到if语句中初始化
+        int m = 0;
+        if(nums == null || nums.length == 0)
+            return 0;
+        while(l <= r){
+            m = (l + r) / 2;
+            if(m == nums.length - 1)                //防止m+1位溢出，并且返回的是位置
+                return m;
+            if(nums[m] < nums[m + 1]){
+                l = m + 1;
+            }
+            else{
+                r = m - 1;
+            }
+        }
+        
+        return l;
+    }
+}
