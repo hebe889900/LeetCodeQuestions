@@ -1,0 +1,30 @@
+public class Solution {
+    public char findTheDifference(String s, String t) {
+
+        HashMap<Character, Integer> h = new HashMap<>();
+        char c = '\0';      //char init!!! char = '' is wrong
+        
+        for(int i = 0; i < s.length(); i++){
+            if(! h.containsKey(s.charAt(i))){
+                h.put(s.charAt(i), 1);
+            }
+            else{
+                h.put(s.charAt(i), h.get(s.charAt(i)) + 1);
+            }
+        }
+        for(int j = 0; j < t.length(); j++){
+            if(h.containsKey(t.charAt(j)))
+                h.put( t.charAt(j), h.get(t.charAt(j)) - 1 );     //h.get(), t.charAt() 不要搞混了
+            else{
+                c = t.charAt(j);
+            }
+                
+        }
+        for(Map.Entry<Character, Integer> entry: h.entrySet()){
+            if(entry.getValue() != 0)
+                c = entry.getKey();
+        }
+        return c;           //不需要数count，默认没有输入不符合情况
+        
+    }
+}
