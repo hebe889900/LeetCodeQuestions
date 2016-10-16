@@ -1,0 +1,19 @@
+// String 不能用 == 要用 equals
+public class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length() != t.length())
+            return false;
+        if(s == null || t == null)
+            return false;
+
+        char[] ss = s.toCharArray();     
+        char[] tt = t.toCharArray();
+        Arrays.sort(ss);
+        Arrays.sort(tt);
+        String s0 = new String(ss);
+        String t0 = new String(tt);
+        if(s0.equals(t0))
+            return true;
+        return false;
+    }
+}
