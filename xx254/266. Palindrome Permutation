@@ -1,0 +1,27 @@
+public class Solution {
+    public boolean canPermutePalindrome(String s) {
+        if(s == null || s.length() == 0)
+            return false;
+        HashMap<Character, Integer> h = new HashMap<>();
+        for(int i = 0; i < s.length(); i++){
+            if(! h.containsKey(s.charAt(i))){
+                h.put(s.charAt(i), 1);
+            }
+            else{
+                h.put(s.charAt(i), h.get(s.charAt(i)) + 1);
+            }
+        }
+        
+        int count = 0;
+        
+        for(Map.Entry<Character, Integer> entry : h.entrySet()){    // entry要给出<Character, Integer>
+            if(entry.getValue().intValue() % 2 == 1)
+                count++;
+        }
+        if(count <= 1)
+            return true;
+        else    
+            return false;
+        
+    }
+}
