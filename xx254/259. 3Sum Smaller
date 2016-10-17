@@ -1,0 +1,26 @@
+public class Solution {
+    public int threeSumSmaller(int[] nums, int target) {
+        if(nums == null || nums.length == 0)
+            return 0;
+        int res = 0;
+        
+        Arrays.sort(nums);
+
+        
+        for(int i = 0; i < nums.length - 2; i++){
+            int start = i + 1, end = nums.length - 1;
+            int sum = nums[i] + nums[start] + nums[end];
+            while(start < end){
+                if(sum < target){
+                    res += end - start;             // ！！   不是res++，因为此时end没有--的机会
+                    start++;
+                    sum = nums[i] + nums[start] + nums[end];    
+                }
+                else
+                    end--;
+                    sum = nums[i] + nums[start] + nums[end];
+            }
+        }
+        return res;
+    }
+}
