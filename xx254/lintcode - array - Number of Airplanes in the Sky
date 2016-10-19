@@ -1,0 +1,53 @@
+/**
+ * Definition of Interval:
+ * public classs Interval {
+ *     int start, end;
+ *     Interval(int start, int end) {
+ *         this.start = start;
+ *         this.end = end;
+ *     }
+ */
+class Point{
+    int time;
+    int flag;
+    
+    Point(int t, int f){
+        this.time = t; 
+        this.flag = f;
+    }
+    public static Comparator<Point> PointComparator = new Comparator<Point>(){
+        public int compare(Point p1, Point p2){
+            if(p1.time == p2.time){
+                return p1.flag - p2.flag;       //0 represents end (priority), 1 represents start
+            }
+            else
+                return p1.time - p2.time;
+        }
+    };          // function end with ; why?
+}
+
+class Solution {
+    /**
+     * @param intervals: An interval array
+     * @return: Count of airplanes are in the sky.
+     */
+    public int countOfAirplanes(List<Interval> airplanes) { 
+        int res = 0;
+        int count = 0;
+        List<Point> list = new ArrayList<Point>();
+        for(Interval m : airplanes){
+            list.add(new Point(m.start, 1));
+            list.add(new Point(m.end, 0));
+        }
+        Collections.sort(list, Point.PointComparator);      // no () needed
+        
+        for(Point p : list){
+            if(p.flag == 1)
+                count++;
+            if(p.flag == 0)
+                count--;
+            res = Math.max(count, res);
+        }
+        return res;
+    }
+}
