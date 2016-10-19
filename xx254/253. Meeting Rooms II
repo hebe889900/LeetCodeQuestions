@@ -1,0 +1,51 @@
+/**
+ * Definition for an interval.
+ * public class Interval {
+ *     int start;
+ *     int end;
+ *     Interval() { start = 0; end = 0; }
+ *     Interval(int s, int e) { start = s; end = e; }
+ * }
+ */
+ 
+class Time{         //不需要public或者private
+    int time;
+    int flag;
+    
+    Time(int t, int f){
+        this.time = t;
+        this.flag = f;
+    }
+    
+    //Comparator是static的，并且不需要返回也不需要void
+    //离开的优先，但是题目没有说清，要confirm
+    public static Comparator<Time> timeComparator = new Comparator<Time>(){     //不是在这里传参的，是在下面
+        public int compare(Time t1, Time t2){
+            //非常规的先if，虽然非必须
+            if(t1.time == t2.time)          //离开的优先，离开是0，开始是1
+                return t1.flag - t2.flag;
+            else
+                return t1.time - t2.time;        
+        }
+    };                                                                          //结尾要有分号
+    
+}
+public class Solution {
+    public int minMeetingRooms(Interval[] intervals) {
+        if(intervals.length == 1)
+            return 1;
+        List<Time> times = new ArrayList<Time>();
+        int count = 0, res = 0;
+        for(Interval val : intervals){
+            times.add(new Time(val.start, 1));
+            times.add(new Time(val.end, 0));
+        }
+        Collections.sort(times, Time.timeComparator);     //timeComparator不需要括号，但需要Time.
+        for(Time t : times){
+            if(t.flag == 1) count++;
+            else    count--;
+            res = Math.max(res, count);
+        }
+        return res;
+    }
+}
